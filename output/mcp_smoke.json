@@ -1,0 +1,97 @@
+{
+  "server": "campus-customs",
+  "database": "data/campus_customs_new.db",
+  "called_via": "Claude Code MCP connection (.mcp.json)",
+  "tests": [
+    {
+      "prompt": "I need a bulldog tee in size S. what you got for me?",
+      "ticket": 101,
+      "tool": "check_inventory",
+      "arguments": {
+        "sku": "CC-TEE-WHITE",
+        "size": "S"
+      },
+      "tool_output": {
+        "found": true,
+        "rows": [
+          {
+            "sku": "CC-TEE-WHITE",
+            "name": "Classic Bulldog Tee",
+            "size": "S",
+            "qty": 0,
+            "location": "Aisle B"
+          }
+        ]
+      },
+      "db_values": {
+        "found": true,
+        "rows": [
+          {
+            "sku": "CC-TEE-WHITE",
+            "name": "Classic Bulldog Tee",
+            "size": "S",
+            "qty": 0,
+            "location": "Aisle B"
+          }
+        ]
+      },
+      "matches_db": true
+    },
+    {
+      "prompt": "I need the rent due and due date for lease 1.",
+      "ticket": 102,
+      "tool": "get_lease",
+      "arguments": {
+        "lease_id": 1
+      },
+      "tool_output": {
+        "found": true,
+        "lease": {
+          "id": 1,
+          "space_name": "Chapel Street shop",
+          "landlord": "Elm City Properties",
+          "monthly_rent": 2400,
+          "next_due": "2026-09-02",
+          "notes": null
+        }
+      },
+      "db_values": {
+        "found": true,
+        "lease": {
+          "id": 1,
+          "space_name": "Chapel Street shop",
+          "landlord": "Elm City Properties",
+          "monthly_rent": 2400.0,
+          "next_due": "2026-09-02",
+          "notes": null
+        }
+      },
+      "matches_db": true
+    },
+    {
+      "prompt": "can you hook me up with the cost and list price of the navy hoodie? super fly.",
+      "ticket": 103,
+      "tool": "get_pricing",
+      "arguments": {
+        "sku": "CC-HOOD-NAVY"
+      },
+      "tool_output": {
+        "found": true,
+        "pricing": {
+          "sku": "CC-HOOD-NAVY",
+          "unit_cost": 22,
+          "list_price": 58
+        }
+      },
+      "db_values": {
+        "found": true,
+        "pricing": {
+          "sku": "CC-HOOD-NAVY",
+          "unit_cost": 22.0,
+          "list_price": 58.0
+        }
+      },
+      "matches_db": true
+    }
+  ]
+}

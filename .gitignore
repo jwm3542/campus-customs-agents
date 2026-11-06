@@ -1,0 +1,21 @@
+# Secrets: the real key lives in the course folder's .env, never in this repo
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Virtual environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+
+# Local tool settings
+.claude/settings.local.json
+dist/
+*.tsbuildinfo
+
+# Course starter archive (same DB as data/campus_customs.db)
+data.zip

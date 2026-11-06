@@ -1,0 +1,113 @@
+{
+  "model": "gpt-6-luna",
+  "database": "data/campus_customs_new.db",
+  "starting_checking_balance": 3400.0,
+  "ending_checking_balance": 160.0,
+  "tickets": [
+    {
+      "id": 101,
+      "subject": "Bulldog tee",
+      "final_status": "resolved",
+      "short_outcome": "Paid overdue invoice 501 ($840, human-approved) so Bulldog Print Co can ship; reorder of 1 white tee size S recorded, earliest arrival 2026-09-05. Customer reply drafted, not sent.",
+      "agent_contributions": {
+        "accounting": [
+          "Invoice 501 from Bulldog Print Co is open and 3 days overdue as of 2026-08-31. I queued an $840 payment for human approval; no funds have moved, so the shipment blocker is not yet cleared and Inventory should not promise shipment until payment is confirmed."
+        ],
+        "inventory": [
+          "CC-TEE-WHITE size S has 0 on hand against 1 wanted, so it is not fulfillable from shelf stock now. Bulldog Print Co has a 5-day lead time but cannot ship while invoice 501 for $840 remains open; no arrival date can be promised.",
+          "Ticket 101: CC-TEE-WHITE size S has 0 on hand; 1 was requested, so it is currently unavailable. No restock or arrival date is confirmed.",
+          "CC-TEE-WHITE size S: 0 on hand for 1 wanted, so shortfall is 1 and none can go out now. Bulldog Print Co can ship; invoice 501 is paid and does not block, and a reorder of 1 can arrive earliest 2026-09-05 (5 lead days from 2026-08-31)."
+        ],
+        "customer_service": [
+          "Draft prepared for Tauhid Zaman; no arrival date or completed payment is claimed.",
+          "Drafted a reply to Tauhid Zaman; not sent."
+        ],
+        "boss": [
+          "The tee is out of stock, and Bulldog Print Co cannot ship until overdue invoice 501 is paid. Keep the order waiting for human approval of the queued invoice payment; no arrival date is confirmed.",
+          "Recorded the reorder as placed with Bulldog Print Co for one CC-TEE-WHITE tee in size S; earliest possible arrival is 2026-09-05 and is not guaranteed. Invoice 501 is paid, and a customer reply is drafted but not sent."
+        ]
+      },
+      "human_approvals": [
+        {
+          "id": 1,
+          "kind": "invoice",
+          "ref_id": 501,
+          "amount": 840.0,
+          "status": "approved",
+          "decided_by": "Jared Miller",
+          "decided_at": "2026-08-31"
+        }
+      ],
+      "run_ids": [
+        "357ce546e35e",
+        "ad2ec83868b5"
+      ]
+    },
+    {
+      "id": 102,
+      "subject": "Rent due",
+      "final_status": "resolved",
+      "short_outcome": "Verified the rent notice against lease 1 and paid $2,400 to Elm City Properties (human-approved); lease next due rolled to 2026-10-02.",
+      "agent_contributions": {
+        "accounting": [
+          "Checking has $3,400.00, with $840.00 already pending. Chapel Street rent of $2,400.00 is due in 2 days (2026-09-02), not overdue; queued approval #2 for ticket 102. No money moved, and $160.00 would remain if all pending requests are approved.",
+          "The $2,400 rent approval is already queued as approval ID 2 and is awaiting human approval; no payment was made. Checking has $3,400, with $3,240 pending across approvals, leaving $160 if all pending requests are approved, so there is no cash shortfall.",
+          "Do not queue a new rent approval: lease 1 already has an approved request and the rent payment is recorded as paid. Checking balance is $160, with $0 awaiting approval."
+        ],
+        "facilities": [
+          "Lease 1 is for the Chapel Street shop, landlord Elm City Properties, rent $2,400.00 due 2026-09-02. On the shop date 2026-08-31, rent is due in 2 days; the notice’s timing and sender match the lease record, but the email does not state an amount to verify against the lease. Accounting queued approval #2 for human review; no payment was made.",
+          "Lease 1 for the Chapel Street shop lists monthly rent of $2,400 payable to Elm City Properties, next due October 2, 2026 (32 days after the shop date, August 31). The notice’s “due in 2 days” claim conflicts with the lease record; ticket notes also mention September 2 and a pending approval, inconsistent with the lookup, so I made no accounting handoff."
+        ],
+        "boss": [
+          "Lease 1 confirms $2,400 rent is due to Elm City Properties on 2026-09-02, matching the notice. Approval #2 for $2,400 is queued for human approval; no payment has been made, and available cash covers pending approvals.",
+          "Lease 1 rent payment of $2,400 to Elm City Properties is approved and recorded paid on 2026-08-31, so no further payment action is needed. The lease lists the next due date as 2026-10-02, while the notice and approval reason cite 2026-09-02; reconcile that discrepancy for future billing."
+        ]
+      },
+      "human_approvals": [
+        {
+          "id": 2,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "status": "approved",
+          "decided_by": "Jared Miller",
+          "decided_at": "2026-08-31"
+        }
+      ],
+      "run_ids": [
+        "f4ae3aa186c0",
+        "6e9d553b3e99"
+      ]
+    },
+    {
+      "id": 103,
+      "subject": "Bulk hoodie discount",
+      "final_status": "resolved",
+      "short_outcome": "Approved 10% bulk discount ($52.20 each, above $22 cost); 8 of 20 on hand, reorder of 12 recorded with Bulldog Print Co, earliest arrival 2026-09-05. Reply drafted, not sent.",
+      "agent_contributions": {
+        "accounting": [
+          "For SKU CC-HOOD-NAVY, unit cost is $22 and current list price is $58. Margin at list is $36 per unit (62.1% of price); for 20 units, list total is $1,160, cost total is $440, and gross margin is $720. Minimum permissible unit price is $22.",
+          "Invoice #501 for Bulldog Print Co is open and 3 days overdue, but it already has a pending human-approval request (approval #1), so I did not duplicate it. The database description is for CC-TEE-WHITE S, not the ticket’s stated CC-HOOD-NAVY; confirm this is the intended vendor bill before approval. No order was placed."
+        ],
+        "inventory": [
+          "CC-HOOD-NAVY, size M: 8 on hand (Aisle A), so 8 of 20 are available now and the shortfall is 12. Bulldog Print Co is the apparel reprint vendor (5-day lead) but cannot ship while invoice #501 ($840) is open; no arrival date can be promised and no order was placed.",
+          "Ticket 103: CC-HOOD-NAVY, size M has 8 on hand of 20 wanted, so 12 are short; 8 can go out now. Bulldog Print Co can ship the 12-unit shortfall (apparel reprint, 5-day lead), with earliest arrival 2026-09-05; no remaining vendor blocker, and no purchase order was placed.",
+          "CC-HOOD-NAVY size M has 8 units on hand. Bulldog Print Co lists a 5-day lead and can ship; from the shop date 2026-08-31, 2026-09-05 is the earliest calculated arrival date, but no 12-unit restock or arrival is confirmed."
+        ],
+        "customer_service": [
+          "Drafted a concise reply for Yale AI Club; not sent.",
+          "Drafted a customer reply for Yale AI Club using confirmed on-hand stock, pricing, and supplier lead information; the restock and arrival are not confirmed."
+        ],
+        "boss": [
+          "Approved a 10% bulk discount at $52.20 per hoodie, above the $22 unit cost. Only 8 of 20 are on hand; restocking the remaining 12 is blocked pending clarification that open vendor invoice #501 (whose description references a different SKU) is the correct bill.",
+          "Kept the previously approved 10% bulk offer at $52.20 per hoodie (above $22 unit cost). Placed a 12-unit restock with Bulldog Print Co; 8 are currently on hand, and the earliest estimated arrival for the restock is 2026-09-05, not guaranteed."
+        ]
+      },
+      "human_approvals": [],
+      "run_ids": [
+        "46f92c383d72",
+        "c55cefe75e4e"
+      ]
+    }
+  ]
+}

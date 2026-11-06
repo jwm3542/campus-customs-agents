@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus Customs · Resolved board</title>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Fraunces:wght@400;700&family=Karla:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f6eedb; color: #1e2533; font: 17px/1.6 'Karla', Arial, sans-serif; }
+  .announce { background: #8a3a26; color: #fbe9d0; text-align: center; padding: 8px; font: italic 15px 'Fraunces', Georgia, serif; }
+  header { background: linear-gradient(180deg, #5a3822, #3b2416); border-bottom: 4px solid #b8862b; padding: 22px 32px; }
+  h1 { margin: 0; font: 400 38px 'Rye', Georgia, serif; color: #e2b75a; text-shadow: 0 2px 0 #2a170d; }
+  header p { margin: 4px 0 0; color: #f3dfb3; font-style: italic; }
+  .stripes { height: 16px; background: linear-gradient(180deg, #e3a72f 0 33%, #d0632b 33% 66%, #8a3a26 66%); }
+  main { max-width: 1160px; margin: 0 auto; padding: 28px 24px 60px; }
+  .summary { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
+  .summary div { background: #fffaf0; border: 1px solid #d9cba6; border-left: 6px solid #e3a72f; border-radius: 10px; padding: 10px 16px; }
+  .summary b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #8a3a26; }
+  figure { margin: 0 0 36px; background: #fffaf0; border: 1px solid #d9cba6; border-radius: 14px; padding: 18px; box-shadow: 0 10px 24px rgba(59,36,22,.08); }
+  figure h2 { margin: 0 0 6px; font: 700 24px 'Fraunces', Georgia, serif; color: #0f2a4a; }
+  .stamp { display: inline-block; margin-left: 10px; padding: 0 10px; border: 3px solid #2f6b3a; color: #2f6b3a; border-radius: 6px; transform: rotate(-4deg); font: 15px 'Rye', serif; vertical-align: middle; }
+  figcaption { color: #5b5446; margin-bottom: 12px; }
+  img { width: 100%; border-radius: 8px; border: 1px solid #d9cba6; }
+</style>
+</head>
+<body>
+<div class="announce">Practice desk. No customer was emailed and no real vendor was called. Every payment was signed by a human.</div>
+<header>
+  <h1>Campus Customs · Resolved board</h1>
+  <p>Screenshots of the React ops desk (localhost:5173) after the full gpt-6-luna run, Problem 9</p>
+</header>
+<div class="stripes"></div>
+<main>
+  <div class="summary">
+    <div><b>Start (after reset)</b>$3,400.00</div>
+    <div><b>101 · invoice 501</b>−$840.00</div>
+    <div><b>102 · lease 1 rent</b>−$2,400.00</div>
+    <div><b>103 · discount only</b>$0.00</div>
+    <div><b>End = cash_accounts</b>$160.00</div>
+  </div>
+
+  <figure>
+    <h2>#101 · Bulldog tee <span class="stamp">Resolved</span></h2>
+    <figcaption>Boss → Inventory, Boss → Customer Service. Invoice 501 paid ($840, approved by Jared Miller). The reorder of 1 tee in size S is recorded, with the earliest arrival 2026-09-05. The register reads $160.00 after both payments.</figcaption>
+    <img src="screens/ticket_101.jpg" alt="React board with ticket 101 resolved, agent lineup, live set feed, and liner notes" />
+  </figure>
+
+  <figure>
+    <h2>#102 · Rent due <span class="stamp">Resolved</span></h2>
+    <figcaption>Boss → Facilities, Boss → Accounting. Lease 1 rent of $2,400 to Elm City Properties paid (approved by Jared Miller). Next due rolled to 2026-10-02.</figcaption>
+    <img src="screens/ticket_102.jpg" alt="React board with ticket 102 resolved and two approved check stubs" />
+  </figure>
+
+  <figure>
+    <h2>#103 · Bulk hoodie discount <span class="stamp">Resolved</span></h2>
+    <figcaption>Boss → Inventory, Boss → Customer Service (→ Inventory). 10% off at $52.20 each, which is above the $22 cost. 8 on hand, and a reorder of 12 is recorded. No cash moved.</figcaption>
+    <img src="screens/ticket_103.jpg" alt="React board with ticket 103 resolved and the Boss's discount call in the liner notes" />
+  </figure>
+</main>
+</body>
+</html>

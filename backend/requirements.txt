@@ -1,0 +1,7 @@
+# pydantic-ai-slim with [openai] for Portkey/OpenAI and [mcp] for the MCP client.
+# The [mcp] extra is a deliberate addition: agents reach the shop only through our MCP server.
+pydantic-ai-slim[openai,mcp]>=2.0.0
+fastmcp>=2.0.0
+python-dotenv>=1.0.1
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
